@@ -48,7 +48,7 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 
 ### 📆 Daily Scrum
 - Günlük toplantılar Discord üzerinden yapıldı  
-- Takım içi iletişim aktif olarak WhatsApp grubundan yürütüldü  
+- Takım içi iletişim, günlük koordinasyon için aktif şekilde WhatsApp grubu üzerinden yürütülmüştür. Ayrıca ekip üyeleri, düzenli olarak Google Meet üzerinden çevrim içi toplantılar gerçekleştirerek sprint ilerleyişini değerlendirmiş ve görev dağılımını planlamıştır.
 - 🖇️ 
 
 ---
