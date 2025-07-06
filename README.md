@@ -1,5 +1,5 @@
 # Grup100
-# 🧠 AI-Powered IELTS Preparation Platform - Sprint 1 Raporu
+# 🧠 AI-Powered IELTS Preparation Platform 
 
 ## 👥 Takım Bilgileri
 
