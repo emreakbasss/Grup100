@@ -20,6 +20,9 @@
 **Product Backlog:**
 https://fluentaigrup100.atlassian.net/jira/software/projects/GRUP/boards/2/backlog?atlOrigin=eyJpIjoiYmZiNGQyZTEyMWU0NGE3ZDg2MzZjM2RiMWM4NmE0MDciLCJwIjoiaiJ9&sprintCompleted=
 
+#Jira Screenshot
+<img width="743" alt="3" src="https://github.com/user-attachments/assets/cb6041cd-4a15-46cd-9efd-13d23525cded" />
+
 **Açıklama:**  
 Bu web tabanlı platform, IELTS sınavına hazırlanan bireylerin Listening, Speaking ve Writing bölümlerinde yapay zeka destekli, kişiselleştirilmiş ve gerçek sınav formatına uygun pratik yapmalarını sağlar.
 
@@ -49,8 +52,10 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 ### 📆 Daily Scrum
 - Günlük toplantılar Discord üzerinden yapıldı  
 - Takım içi iletişim, günlük koordinasyon için aktif şekilde WhatsApp grubu üzerinden yürütülmüştür. Ayrıca ekip üyeleri, düzenli olarak Google Meet üzerinden çevrim içi toplantılar gerçekleştirerek sprint ilerleyişini değerlendirmiş ve görev dağılımını planlamıştır.
-- #Meeting Screenshot
-- ![WhatsApp Görsel 2025-07-07 saat 22 47 12_f01ff766](https://github.com/user-attachments/assets/2a987f23-4a19-4d25-999b-900057dceebf) ![WhatsApp Görsel 2025-07-07 saat 22 47 13_ebc3a62b](https://github.com/user-attachments/assets/0cbcfaec-d058-42bc-afcf-b4ed0e9c9bfd)
+
+#Meeting Screenshot
+![1](https://github.com/user-attachments/assets/568bd80f-6150-4353-b3a1-5921211f43ab)
+![2](https://github.com/user-attachments/assets/37d893c2-be1e-49b7-bc8b-82d9b38ff89d)
 
 - 
 
