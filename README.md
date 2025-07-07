@@ -20,8 +20,7 @@
 **Product Backlog:**
 https://fluentaigrup100.atlassian.net/jira/software/projects/GRUP/boards/2/backlog?atlOrigin=eyJpIjoiYmZiNGQyZTEyMWU0NGE3ZDg2MzZjM2RiMWM4NmE0MDciLCJwIjoiaiJ9&sprintCompleted=
 
-#Jira Screenshot
-<img width="743" alt="3" src="https://github.com/user-attachments/assets/cb6041cd-4a15-46cd-9efd-13d23525cded" />
+
 
 **Açıklama:**  
 Bu web tabanlı platform, IELTS sınavına hazırlanan bireylerin Listening, Speaking ve Writing bölümlerinde yapay zeka destekli, kişiselleştirilmiş ve gerçek sınav formatına uygun pratik yapmalarını sağlar.
@@ -64,7 +63,9 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 
 ## 📸 Sprint Board & Durum
 
-- **Backlog Screenshot:**  
+- **Backlog Screenshot:**
+
+<img width="743" alt="3" src="https://github.com/user-attachments/assets/cb6041cd-4a15-46cd-9efd-13d23525cded" /> 
 - **Ürün Ekran Görüntüsü:** Sprint 1 fikir ve analiz sprinti olduğu için henüz görsel çıktı yoktur. İlk prototipler Sprint 2’de başlayacaktır.
 
 ---
