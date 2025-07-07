@@ -66,6 +66,7 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 - **Backlog Screenshot:**
 
 <img width="743" alt="3" src="https://github.com/user-attachments/assets/cb6041cd-4a15-46cd-9efd-13d23525cded" /> 
+
 - **Ürün Ekran Görüntüsü:** Sprint 1 fikir ve analiz sprinti olduğu için henüz görsel çıktı yoktur. İlk prototipler Sprint 2’de başlayacaktır.
 
 ---
@@ -93,3 +94,5 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 **Aksiyonlar:**
 - Sprint 2’de wireframe ve ilk modül prototipi geliştirilecek  
 - Essay değerlendirme sistemi için örnek test ortamı hazırlanacak  
+
+## 🚀 Sprint 2 Bilgileri
