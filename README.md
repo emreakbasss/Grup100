@@ -52,9 +52,6 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 - Günlük toplantılar Discord üzerinden yapıldı  
 - Takım içi iletişim, günlük koordinasyon için aktif şekilde WhatsApp grubu üzerinden yürütülmüştür. Ayrıca ekip üyeleri, düzenli olarak Google Meet üzerinden çevrim içi toplantılar gerçekleştirerek sprint ilerleyişini değerlendirmiş ve görev dağılımını planlamıştır.
 
-#Meeting Screenshot
-![1](https://github.com/user-attachments/assets/568bd80f-6150-4353-b3a1-5921211f43ab)
-![2](https://github.com/user-attachments/assets/37d893c2-be1e-49b7-bc8b-82d9b38ff89d)
 
 - 
 
@@ -69,7 +66,15 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 
 - **Ürün Ekran Görüntüsü:** Sprint 1 fikir ve analiz sprinti olduğu için henüz görsel çıktı yoktur. İlk prototipler Sprint 2’de başlayacaktır.
 
----
+# Toplantı notları
+
+# Meeting Screenshot
+
+<img src="https://github.com/user-attachments/assets/568bd80f-6150-4353-b3a1-5921211f43ab" width="500">
+
+<img src="https://github.com/user-attachments/assets/37d893c2-be1e-49b7-bc8b-82d9b38ff89d" width="500">
+
+
 
 ## ✅ Sprint Review
 
