@@ -68,9 +68,7 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 
 # Toplantı notları
 
-<img src="https://github.com/user-attachments/assets/568bd80f-6150-4353-b3a1-5921211f43ab" width="500">
-
-<img src="https://github.com/user-attachments/assets/37d893c2-be1e-49b7-bc8b-82d9b38ff89d" width="500">
+<img src="https://github.com/user-attachments/assets/568bd80f-6150-4353-b3a1-5921211f43ab" width="500"> <img src="https://github.com/user-attachments/assets/37d893c2-be1e-49b7-bc8b-82d9b38ff89d" width="500">
 
 
 
