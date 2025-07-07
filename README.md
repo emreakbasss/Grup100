@@ -50,9 +50,9 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 - Günlük toplantılar Discord üzerinden yapıldı  
 - Takım içi iletişim, günlük koordinasyon için aktif şekilde WhatsApp grubu üzerinden yürütülmüştür. Ayrıca ekip üyeleri, düzenli olarak Google Meet üzerinden çevrim içi toplantılar gerçekleştirerek sprint ilerleyişini değerlendirmiş ve görev dağılımını planlamıştır.
 - #Meeting Screenshot
-- ![WhatsApp Görsel 2025-07-07 saat 22 47 12_f01ff766](https://github.com/user-attachments/assets/2a987f23-4a19-4d25-999b-900057dceebf)
-- ![WhatsApp Görsel 2025-07-07 saat 22 47 13_ebc3a62b](https://github.com/user-attachments/assets/0cbcfaec-d058-42bc-afcf-b4ed0e9c9bfd)
+- ![WhatsApp Görsel 2025-07-07 saat 22 47 12_f01ff766](https://github.com/user-attachments/assets/2a987f23-4a19-4d25-999b-900057dceebf) ![WhatsApp Görsel 2025-07-07 saat 22 47 13_ebc3a62b](https://github.com/user-attachments/assets/0cbcfaec-d058-42bc-afcf-b4ed0e9c9bfd)
 
+- 
 
 
 ---
