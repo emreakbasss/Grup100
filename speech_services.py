@@ -23,7 +23,7 @@ def listen_to_user():
 
 def speak_text(text):
     print(f"Yapay Zeka diyor ki: {text}")
-    tts = gTTS(text=text, lang='en', tld='co.uk', slow=False) # IELTS için İngiliz aksanı (tld='co.uk') daha doğal olabilir
+    tts = gTTS(text=text, lang='en', tld='co.uk', slow=False)
     filename = "temp_audio.mp3"
     tts.save(filename)
     playsound(filename)
