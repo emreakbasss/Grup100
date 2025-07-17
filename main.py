@@ -1,4 +1,6 @@
 # main.py
+import warnings
+warnings.filterwarnings("ignore", message=r"urllib3 v2 only supports OpenSSL 1.1.1\+, currently the 'ssl' module is compiled with.*")
 
 
 from ielts_examiner import IELTSExaminer
