@@ -116,7 +116,6 @@ Her bir backlog item'ı, test edilmiş ve kullanılabilir hale geldiğinde tamam
 ## 📆 Daily Scrum
 
 - Takım içi iletişim WhatsApp üzerinden aktif şekilde sürdürüldü.
-- Ayrıca her iki günde bir **Google Meet** toplantısı ile ilerleme kontrol edildi.
 - Daily Scrum kayıtları ve kısa notlar [Google Drive linki] üzerinden arşivlenmiştir.
 
 ---
@@ -127,23 +126,36 @@ Her bir backlog item'ı, test edilmiş ve kullanılabilir hale geldiğinde tamam
   - ![Backlog Board 1](link)
   - ![Task Progress](link)
 
----
-
 ## 🖥️ Ürün Durumu: Ekran Görüntüleri
 
 - Ana Sayfa prototipi tamamlandı.
 - Listening modülünün boşluk doldurma ekranı hazırlandı.
 - Writing modülünde kullanıcıdan essay alınan form tasarlandı.
 
-📁 [Google Drive - Ürün Görselleri (Erişim açık link)](link)
+Aşağıda, uygulamanın Sprint 2 sonunda ulaştığı temel modüllere ait kullanıcı arayüzü örnekleri yer almaktadır:
 
----
+### 🔹 Ana Sayfa
+<img width="947" height="405" alt="ana sayfa" src="https://github.com/user-attachments/assets/9d9f2bae-ccb2-4e12-85df-a1568dc8d0fd" />
+
+### 🔹 Listening Modülü
+<img width="896" height="401" alt="Listening" src="https://github.com/user-attachments/assets/87885c43-9185-4d0b-96e2-c0a0ceac8d73" />
+
+### 🔹 Reading Modülü
+<img width="841" height="320" alt="reading" src="https://github.com/user-attachments/assets/65449c19-7038-4545-a28d-f03824d2adc5" />
+
+### 🔹 Speaking Modülü
+<img width="843" height="395" alt="Speaking" src="https://github.com/user-attachments/assets/7da8c9ea-a63c-4b36-8a45-c2ba9a7c7649" />
+
+### 🔹 Writing Modülü
+<img width="859" height="389" alt="writing" src="https://github.com/user-attachments/assets/459d22e2-bbe9-4fb6-b23b-19c9cb429301" />
+
+
 
 ## 🧪 Sprint Review
 
 - Projenin temel bileşenleri başarıyla oluşturuldu.
 - Kullanıcı arayüzü bileşenlerinin %70’i tamamlandı.
-- API testleri sonucunda OpenAI Whisper ve GPT-4 entegrasyonlarında başarılı örnek sonuçlar alındı.
+- API testleri sonucunda OpenAI,Gemini entegrasyonlarında başarılı örnek sonuçlar alındı.
 - Kullanıcıdan gelen örnek essay metniyle Writing modülünde geri bildirim simülasyonu oluşturuldu.
 
 **Katılımcılar:** Emre Akbaş, Feyzi Eşkar, Deniz Su Şen, Hüseyin Casun, Aleyna Yılmaz
@@ -165,9 +177,3 @@ Her bir backlog item'ı, test edilmiş ve kullanılabilir hale geldiğinde tamam
 - Sprint 3’te test senaryolarına daha fazla zaman ayrılacak.
 - Speaking modülü için ses tanıma entegrasyonu başlatılacak.
 - Yazılı içerikler için kullanıcı testine başlanacak.
-
----
-
-📅 **Teslim Tarihi:** 20 Temmuz 23:59  
-📝 Not: Rapor `README.md` dosyasında doğrudan ya da ayrı .md sayfa olarak link verilerek erişilebilir olmalıdır.
-
