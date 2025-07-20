@@ -97,3 +97,77 @@ IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyl
 - Essay değerlendirme sistemi için örnek test ortamı hazırlanacak  
 
 ## 🚀 Sprint 2 Bilgileri
+# 🚀 Sprint 2 Raporu – AI-Powered IELTS Preparation Platform
+
+## 📌 Sprint Notları
+
+Sprint 2'de projenin ilk prototiplerine geçiş yapılmıştır. Özellikle kullanıcı arayüzünün temel bölümleri oluşturulmuş ve ilk API denemeleri gerçekleştirilmiştir. Listening modülüne ait veri işleme ve metin sunumu örnekleri hazırlanmıştır. Writing modülü için örnek essay analizleri yapılmıştır.
+
+## 🎯 Sprint İçinde Tahmin Edilen Puan
+
+Toplam 100 puanlık iş planlandı ve backlog üzerinde dağıtıldı.
+
+## 📊 Puan Tamamlama Mantığı
+
+Her bir backlog item'ı, test edilmiş ve kullanılabilir hale geldiğinde tamamlandı olarak işaretlendi. Arayüz tasarımı, demo API entegrasyonu ve modül testleri üzerinden puanlama yapıldı.
+
+---
+
+## 📆 Daily Scrum
+
+- Takım içi iletişim WhatsApp üzerinden aktif şekilde sürdürüldü.
+- Ayrıca her iki günde bir **Google Meet** toplantısı ile ilerleme kontrol edildi.
+- Daily Scrum kayıtları ve kısa notlar [Google Drive linki] üzerinden arşivlenmiştir.
+
+---
+
+## 📋 Sprint Board Ekran Görüntüleri
+
+- Backlog ve yapılacaklar panosu ekran görüntüleri:
+  - ![Backlog Board 1](link)
+  - ![Task Progress](link)
+
+---
+
+## 🖥️ Ürün Durumu: Ekran Görüntüleri
+
+- Ana Sayfa prototipi tamamlandı.
+- Listening modülünün boşluk doldurma ekranı hazırlandı.
+- Writing modülünde kullanıcıdan essay alınan form tasarlandı.
+
+📁 [Google Drive - Ürün Görselleri (Erişim açık link)](link)
+
+---
+
+## 🧪 Sprint Review
+
+- Projenin temel bileşenleri başarıyla oluşturuldu.
+- Kullanıcı arayüzü bileşenlerinin %70’i tamamlandı.
+- API testleri sonucunda OpenAI Whisper ve GPT-4 entegrasyonlarında başarılı örnek sonuçlar alındı.
+- Kullanıcıdan gelen örnek essay metniyle Writing modülünde geri bildirim simülasyonu oluşturuldu.
+
+**Katılımcılar:** Emre Akbaş, Feyzi Eşkar, Deniz Su Şen, Hüseyin Casun, Aleyna Yılmaz
+
+---
+
+## 🔁 Sprint Retrospective
+
+### ✅ İyi Gidenler:
+- UI/UX prototipleme beklenenden hızlı ilerledi.
+- Takım içi iletişim ve görev paylaşımı sorunsuzdu.
+- API belgeleri doğru şekilde incelenip uygulanabildi.
+
+### ⚠️ Geliştirilmesi Gerekenler:
+- Zaman yönetimi ve task tahmini bazı görevlerde eksikti.
+- Daily Scrum’larda zaman sınırı belirlenmeli.
+
+### 🔄 Alınan Aksiyonlar:
+- Sprint 3’te test senaryolarına daha fazla zaman ayrılacak.
+- Speaking modülü için ses tanıma entegrasyonu başlatılacak.
+- Yazılı içerikler için kullanıcı testine başlanacak.
+
+---
+
+📅 **Teslim Tarihi:** 20 Temmuz 23:59  
+📝 Not: Rapor `README.md` dosyasında doğrudan ya da ayrı .md sayfa olarak link verilerek erişilebilir olmalıdır.
+
