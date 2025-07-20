@@ -123,8 +123,12 @@ Her bir backlog item'ı, test edilmiş ve kullanılabilir hale geldiğinde tamam
 ## 📋 Sprint Board Ekran Görüntüleri
 
 - Backlog ve yapılacaklar panosu ekran görüntüleri:
-  - ![Backlog Board 1](link)
-  - ![Task Progress](link)
+  <img width="817" height="374" alt="Jira" src="https://github.com/user-attachments/assets/41cd3fbd-c652-4621-af2b-bd9b055dd5aa" />
+
+  # Toplantı Ekran Kayıtları
+  <img width="1917" height="1055" alt="Ekran görüntüsü 2025-07-08 222214" src="https://github.com/user-attachments/assets/b7467a3b-5386-4b1e-b072-bfef768abd3e" />
+<img width="1918" height="1075" alt="Ekran görüntüsü 2025-07-08 225554" src="https://github.com/user-attachments/assets/30087d45-0b79-42bc-9097-12b66d6ab53f" />
+
 
 ## 🖥️ Ürün Durumu: Ekran Görüntüleri
 
