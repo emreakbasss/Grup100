@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Reading Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #e2e8f0 50%, #cbd5e1 75%, #94a3b8 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #1e293b;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .generate-button {
+            background: linear-gradient(135deg, #dc2626, #3b82f6);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .generate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .generate-subtitle {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .passage-section {
+            background: #faf5ff;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .passage-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .passage-text {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .time-limit {
+            background: #fef3c7;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .questions-section {
+            background: #f0f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .question-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .question-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .control-button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .check-answers-btn {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+        }
+
+        .check-answers-btn:hover {
+            background: linear-gradient(135deg, #b91c1c, #dc2626);
+            transform: translateY(-1px);
+        }
+
+        .change-answers-btn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+
+        .change-answers-btn:hover {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            transform: translateY(-1px);
+        }
+
+        .question-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question-text {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .options {
+            display: grid;
+            gap: 0.5rem;
+        }
+
+        .option {
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .option:hover {
+            border-color: #3b82f6;
+            background-color: #f0f9ff;
+        }
+
+        .option.selected {
+            border-color: #3b82f6;
+            background-color: #f0f9ff;
+        }
+
+        .option.correct {
+            border-color: #10b981;
+            background-color: #ecfdf5;
+        }
+
+        .option.incorrect {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+        }
+
+        .tips-section {
+            background: #ecfdf5;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #10b981;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .tip-icon {
+            background: #10b981;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .timer {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin: 2rem 0;
+        }
+
+        .result {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .result.correct {
+            background-color: #ecfdf5;
+            color: #059669;
+            border: 2px solid #10b981;
+        }
+
+        .result.incorrect {
+            background-color: #fef2f2;
+            color: #dc2626;
+            border: 2px solid #f87171;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .question-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .question-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-button">← Back to Hub</a>
+    
+    <div class="container">
+        <div class="header">
+            <h1>📚 IELTS Reading Practice</h1>
+            <p>Develop your reading comprehension with authentic passages and timed practice questions.</p>
+        </div>
+
+        <div class="card">
+            <button class="generate-button" onclick="loadNewPassage()">
+                🚀 Generate New Reading
+            </button>
+            <div class="generate-subtitle">Get a fresh challenge to boost your skills!</div>
+            
+            <div id="content">
+                <div class="loading"><div class="spinner"></div>Loading reading passage...</div>
+            </div>
+            
+            <div class="timer" id="timer" style="display: none;">
+                <span id="time">20:00</span>
+            </div>
+            
+            <div id="result"></div>
+        </div>
+    </div>
+
+    <script>
+        let timerInterval;
+        let timeLeft = 1200; // 20 minutes
+        let currentAnswers = [];
+        let currentCorrectAnswers = [];
+        let answersChecked = false;
+
+        async function loadNewPassage() {
+            try {
+                document.getElementById("result").innerHTML = '';
+                document.getElementById("content").innerHTML = '<div class="loading"><div class="spinner"></div>Loading new passage...</div>';
+                currentAnswers = [];
+                currentCorrectAnswers = [];
+                answersChecked = false;
+                
+                const res = await fetch("/generate-reading");
+                const data = await res.json();
+                
+                // Store correct answers
+                currentCorrectAnswers = data.passage.questions.map(q => q.answer);
+                
+                const content = `
+                    <div class="passage-section">
+                        <div class="passage-title">
+                            📖 ${data.passage.title}
+                        </div>
+                        <div class="passage-text">
+                            ${data.passage.text}
+                        </div>
+                        <div class="time-limit">⏱️ ${data.time_limit}</div>
+                    </div>
+                    
+                    <div class="questions-section">
+                        <div class="question-header">
+                            <div class="question-title">❓ Comprehension Questions</div>
+                            <div class="question-controls">
+                                <button class="control-button check-answers-btn" onclick="checkAnswers()">
+                                    ✅ Check Answers
+                                </button>
+                                <button class="control-button change-answers-btn" onclick="changeAnswers()" style="display: none;">
+                                    🔄 Change Answers
+                                </button>
+                            </div>
+                        </div>
+                        ${data.passage.questions.map((q, index) => `
+                            <div class="question-item">
+                                <div class="question-text">${index + 1}. ${q.question}</div>
+                                <div class="options">
+                                    ${q.options.map((option, optIndex) => `
+                                        <div class="option" onclick="selectOption(${index}, ${optIndex})" id="option-${index}-${optIndex}">
+                                            ${String.fromCharCode(65 + optIndex)}. ${option}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div class="tips-section">
+                        <h3>💡 Reading Tips</h3>
+                        ${data.tips.map(tip => `
+                            <div class="tip-item">
+                                <div class="tip-icon">✓</div>
+                                <div>${tip}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                document.getElementById("content").innerHTML = content;
+                
+            } catch (error) {
+                console.error("Error loading passage:", error);
+                document.getElementById("content").innerHTML = "<p>Error loading passage. Please try again.</p>";
+            }
+        }
+
+        function selectOption(questionIndex, optionIndex) {
+            if (answersChecked) return; // Don't allow changing after checking
+            
+            // Remove previous selection for this question
+            const question = document.querySelectorAll(`[id^="option-${questionIndex}-"]`);
+            question.forEach(opt => {
+                opt.classList.remove('selected', 'correct', 'incorrect');
+            });
+            
+            // Select new option
+            document.getElementById(`option-${questionIndex}-${optionIndex}`).classList.add('selected');
+            
+            // Store answer
+            currentAnswers[questionIndex] = optionIndex;
+        }
+
+        function checkAnswers() {
+            const totalQuestions = currentCorrectAnswers.length;
+            const answeredQuestions = currentAnswers.filter(answer => answer !== undefined).length;
+            
+            if (answeredQuestions < totalQuestions) {
+                alert(`Please answer all questions. You have answered ${answeredQuestions} out of ${totalQuestions} questions.`);
+                return;
+            }
+            
+            // Mark options as correct/incorrect
+            currentAnswers.forEach((userAnswer, questionIndex) => {
+                const correctAnswer = currentCorrectAnswers[questionIndex];
+                
+                // Mark all options for this question
+                const question = document.querySelectorAll(`[id^="option-${questionIndex}-"]`);
+                question.forEach((opt, optIndex) => {
+                    opt.classList.remove('correct', 'incorrect');
+                    if (optIndex === correctAnswer) {
+                        opt.classList.add('correct');
+                    } else if (optIndex === userAnswer && userAnswer !== correctAnswer) {
+                        opt.classList.add('incorrect');
+                    }
+                });
+            });
+            
+            // Calculate score
+            const correctCount = currentAnswers.filter((answer, index) => answer === currentCorrectAnswers[index]).length;
+            const score = Math.round((correctCount / totalQuestions) * 100);
+            
+            const resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `
+                <div class="result ${score >= 70 ? 'correct' : 'incorrect'}">
+                    <h3>📊 Your Results</h3>
+                    <p>Score: ${score}% (${correctCount}/${totalQuestions} correct)</p>
+                    <p>${score >= 70 ? 'Great job! Keep practicing!' : 'Keep practicing to improve your score!'}</p>
+                </div>
+            `;
+            
+            // Show change answers button
+            document.querySelector('.change-answers-btn').style.display = 'block';
+            answersChecked = true;
+        }
+
+        function changeAnswers() {
+            // Reset the UI to allow changing answers
+            document.getElementById("result").innerHTML = '';
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+            document.querySelector('.change-answers-btn').style.display = 'none';
+            answersChecked = false;
+        }
+
+        function startTimer() {
+            timeLeft = 1200;
+            document.getElementById("timer").style.display = "block";
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById("time").textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up! Please check your answers.");
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            document.getElementById("timer").style.display = "none";
+        }
+
+        window.onload = loadNewPassage;
+    </script>
+</body>
+</html> 

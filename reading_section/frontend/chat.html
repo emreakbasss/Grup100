@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Chat Demo</title>
+</head>
+<body>
+
+<h2>Chat</h2>
+<div id="chatLog" style="border:1px solid #ccc; padding:10px; height:300px; overflow-y:auto;">
+  <!-- Mesajlar buraya gelecek -->
+</div>
+
+<form id="chatForm" style="margin-top:10px;">
+  <input type="text" id="chatInput" placeholder="Mesajınızı yazın" required style="width:80%" />
+  <button type="submit">Gönder</button>
+</form>
+
+<script>
+const chatForm = document.getElementById('chatForm');
+const chatInput = document.getElementById('chatInput');
+const chatLog = document.getElementById('chatLog');
+
+chatForm.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const message = chatInput.value.trim();
+  if (!message) return;
+
+  // Mesajı chat log'a ekle
+  chatLog.innerHTML += `<div><b>Sen:</b> ${message}</div>`;
+
+  try {
+    const response = await fetch('http://127.0.0.1:8000/chat/send_message', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: message })
+    });
+
+    if (!response.ok) {
+      chatLog.innerHTML += `<div style="color:red;">Sunucudan yanıt alınamadı: ${response.statusText}</div>`;
+      return;
+    }
+
+    const data = await response.json();
+    chatLog.innerHTML += `<div><b>Asistan:</b> ${data.reply}</div>`;
+    chatLog.scrollTop = chatLog.scrollHeight;
+  } catch (error) {
+    chatLog.innerHTML += `<div style="color:red;">Hata: ${error.message}</div>`;
+  }
+
+  chatInput.value = '';
+  chatInput.focus();
+});
+</script>
+
+</body>
+</html>

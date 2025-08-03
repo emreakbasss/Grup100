@@ -1,99 +1,58 @@
-# Grup100
-# 🧠 AI-Powered IELTS Preparation Platform 
+# IELTS Listening Practice Web Application
 
-## 👥 Takım Bilgileri
+Bu uygulama, IELTS Listening sınavı için pratik yapmanıza yardımcı olan bir web uygulamasıdır.
 
-**Takım İsmi:** Fluentai
+## Özellikler
 
-**Takım Üyeleri:**
-- Emre Akbaş – Scrum Master,Developer  
-- Feyzi Eşkar – Developer  
-- Deniz Su Şen – Developer  
-- Hüseyin Casun – Developer,Product Owner  
-- Aleyna Yılmaz – Developer  
+- **AI Destekli İçerik Üretimi**: Gemini AI kullanarak IELTS Listening Part 1 tarzında diyaloglar oluşturur
+- **Text-to-Speech**: Google Cloud TTS ile diyalogları ses dosyasına çevirir
+- **Çoktan Seçmeli Sorular**: Her diyalog için 4 seçenekli sorular üretir
+- **Anında Geri Bildirim**: Cevabınızı kontrol edebilirsiniz
 
+## Kurulum
 
-## 📌 Ürün Bilgileri
+1. Gerekli Python paketlerini yükleyin:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-**Ürün İsmi:** AI-Powered IELTS Preparation Platform
+2. Google Cloud Text-to-Speech için kimlik doğrulama ayarlayın (opsiyonel)
 
-**Product Backlog:**
-https://fluentaigrup100.atlassian.net/jira/software/projects/GRUP/boards/2/backlog?atlOrigin=eyJpIjoiYmZiNGQyZTEyMWU0NGE3ZDg2MzZjM2RiMWM4NmE0MDciLCJwIjoiaiJ9&sprintCompleted=
+## Kullanım
 
+1. Uygulamayı başlatın:
+   ```bash
+   python app.py
+   ```
 
+2. Web tarayıcınızda şu adresi açın:
+   ```
+   http://localhost:5000
+   ```
 
-**Açıklama:**  
-Bu web tabanlı platform, IELTS sınavına hazırlanan bireylerin Listening, Speaking ve Writing bölümlerinde yapay zeka destekli, kişiselleştirilmiş ve gerçek sınav formatına uygun pratik yapmalarını sağlar.
+3. "Generate New Listening" butonuna tıklayarak yeni bir listening örneği oluşturun
 
-### 🎯 Özellikler (Planlanan)
-- **Listening:** AI tarafından okunan metinlerle boşluk doldurma alıştırmaları  
-- **Speaking:** AI ile sesli etkileşimli sınav simülasyonu  
-- **Writing:** Essay analizi, otomatik puanlama ve geliştirme önerileri  
-- Web tabanlı, mobil uyumlu, kullanıcı dostu arayüz  
-- Kişiselleştirilmiş içerik önerileri
+4. Ses dosyasını dinleyin ve soruyu cevaplayın
 
-### 👤 Hedef Kitle
-IELTS sınavına hazırlanan lise, üniversite öğrencileri ve yetişkin bireyler. Özellikle bireysel çalışmayı tercih eden, özel ders alamayan kullanıcılar.
+5. Cevabınızı kontrol edin
 
-## 🚀 Sprint 1 Bilgileri
+## Dosya Yapısı
 
-### 📍 Sprint Notları
-- **Sprint İçeriği:**  
-  - Proje fikrinin netleştirilmesi  
-  - IELTS sınav yapısının detaylı analizi  
-  - Dataset araştırmaları (özellikle Listening ve Writing için)  
-  - Kullanılabilecek yapay zekâ servislerinin (OpenAI, Whisper, GPT-4, Google Speech API, HuggingFace) karşılaştırılması  
-  - Backlog oluşturulması ve puanlanması
+- `app.py` - Flask web sunucusu
+- `config.py` - Gemini API anahtarı
+- `listening_generator.py` - AI ile listening içeriği üretimi
+- `google_tts_service.py` - Text-to-Speech servisi
+- `templates/frontend.html` - Web arayüzü
+- `static/audio/` - Ses dosyaları
 
-- **Sprint Tahmini Puan:** 100 puan  
-- **Puanlama Mantığı:** Araştırma ve karar aşamasındaki backlog item’larının bilgiye ulaşılması ve dokümante edilmesiyle tamamlandı olarak işaretlendi.
+## API Endpoints
 
-### 📆 Daily Scrum
-- Günlük toplantılar Discord üzerinden yapıldı  
-- Takım içi iletişim, günlük koordinasyon için aktif şekilde WhatsApp grubu üzerinden yürütülmüştür. Ayrıca ekip üyeleri, düzenli olarak Google Meet üzerinden çevrim içi toplantılar gerçekleştirerek sprint ilerleyişini değerlendirmiş ve görev dağılımını planlamıştır.
+- `GET /` - Ana sayfa
+- `GET /generate-listening` - Yeni listening örneği oluşturur
 
+## Teknolojiler
 
-- 
-
-
----
-
-## 📸 Sprint Board & Durum
-
-- **Backlog Screenshot:**
-
-<img width="743" alt="3" src="https://github.com/user-attachments/assets/cb6041cd-4a15-46cd-9efd-13d23525cded" /> 
-
-- **Ürün Ekran Görüntüsü:** Sprint 1 fikir ve analiz sprinti olduğu için henüz görsel çıktı yoktur. İlk prototipler Sprint 2’de başlayacaktır.
-
-# Toplantı notları
-
-<img src="https://github.com/user-attachments/assets/568bd80f-6150-4353-b3a1-5921211f43ab" width="500"> <img src="https://github.com/user-attachments/assets/37d893c2-be1e-49b7-bc8b-82d9b38ff89d" width="500">
-
-
-
-## ✅ Sprint Review
-
-- Proje temel hatlarıyla şekillendi  
-- Dataset ve API araştırmaları yapılıyor. 
-- MVP (Minimum Viable Product) için gerekli ön analizler yapıldı
-
-**Katılımcılar:** Emre Akbaş, Feyzi Eşkar, Deniz Su Şen, Hüseyin Casun, Aleyna Yılmaz
-
----
-
-## 🔁 Sprint Retrospective
-
-**İyi Gidenler:**
-- Araştırmalar sistemli şekilde paylaşıldı  
-- Takım içi iletişim çok güçlüydü
-
-**İyileştirme Gerektiren Noktalar:**
-- Daily notlarının arşivlenmesi düzenlenmeli  
-- Backlog item’ları daha detaylı yazılmalı
-
-**Aksiyonlar:**
-- Sprint 2’de wireframe ve ilk modül prototipi geliştirilecek  
-- Essay değerlendirme sistemi için örnek test ortamı hazırlanacak  
-
-## 🚀 Sprint 2 Bilgileri
+- **Backend**: Flask (Python)
+- **AI**: Google Gemini API
+- **Text-to-Speech**: Google Cloud TTS
+- **Frontend**: HTML, CSS, JavaScript 

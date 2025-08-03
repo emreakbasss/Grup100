@@ -1,0 +1,14 @@
+{
+  "dialogue": [
+    "A: Excuse me, I'm interested in the weekend pottery class.  Could you tell me what's included in the fee?",
+    "B: Certainly. The fee covers all materials, including clay, glazes, and kiln firing, as well as the use of tools and equipment.  Refreshments are also provided."
+  ],
+  "question": "What is NOT included in the pottery class fee?",
+  "options": [
+    "A. Clay",
+    "B. Glazes",
+    "C. Kiln firing",
+    "D. Lunch"
+  ],
+  "answer": "D"
+}

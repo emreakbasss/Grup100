@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IELTS Writing Evaluator</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- ✅ Doğru Chart.js sürümü ve klasik CDN kullanımı -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="main-layout">
+
+    <!-- Sol Panel: Writing Evaluation -->
+    <div class="container">
+      <h1>IELTS Writing Task Evaluation</h1>
+
+      <div id="timerSection">
+        <h3>🕒 Timer: <span id="timerDisplay">60:00</span></h3>
+        <button id="startTimerBtn" onclick="startTimer()">Start 60-Minute Timer</button>
+      </div>
+
+      <div style="margin-bottom: 15px;">
+        <button id="task1Btn" onclick="setTaskType('task1')">Task 1 Evaluation</button>
+        <button id="task2Btn" onclick="setTaskType('task2')">Task 2 Evaluation</button>
+      </div>
+
+      <div style="margin-bottom: 10px;">
+        <label for="userIdInput"><strong>🔐 User ID:</strong></label><br>
+        <input id="userIdInput" placeholder="Enter your 6-digit ID" maxlength="6" style="padding: 8px; width: 200px;">
+      </div>
+
+      <textarea id="essay" rows="15" placeholder="Paste your essay here..."></textarea>
+      <br>
+
+      <div class="button-group">
+        <button onclick="submitEssay()">📝 Evaluate</button>
+        <button onclick="correctEssay()">🔍 Correct Mistakes</button>
+        <button onclick="improveEssay()">🚀 Improve Text</button>
+      </div>
+
+      <h3>Evaluation Result:</h3>
+      <pre id="result">Waiting for submission...</pre>
+
+      <h3>Band Score Chart:</h3>
+      <canvas id="scoreChart" width="600" height="300"></canvas>
+
+      <div id="correctedSection" style="display: none; margin-top: 20px;">
+        <h3>Original Essay (with mistakes highlighted):</h3>
+        <div id="highlightedText" class="original-text code-box"></div>
+
+        <h3 style="margin-top: 20px;">Corrected Essay:</h3>
+        <pre id="correctedText" class="corrected-text">No corrections yet.</pre>
+      </div>
+
+      <div id="improvedSection" style="display: none; margin-top: 20px;">
+        <h3>Improved Essay:</h3>
+        <pre id="improvedText">No improvements yet.</pre>
+      </div>
+    </div>
+
+    <!-- Sağ Panel: Essay Analysis -->
+    <div class="analysis-panel">
+      <h2>Essay Analysis</h2>
+      <button onclick="analyzeEssay()">🔎 Analyze</button>
+
+      <div class="analysis-section">
+        <p><strong>Word Count:</strong> <span id="wordCount">-</span></p>
+        <p><strong>Grammar Mistakes:</strong> <span id="grammarMistakes">-</span></p>
+        <p><strong>Vocabulary Repetition:</strong></p>
+        <ul id="vocabRepetitionList"></ul>
+      </div>
+
+      <div style="margin-top: 20px;">
+        <h3>Vocabulary Complexity</h3>
+        <canvas id="vocabChart" width="250" height="250"></canvas>
+      </div>
+
+      <!-- ✅ Gelişim Geçmişi (History Chart) -->
+      <div id="historySection" style="display: none; margin-top: 40px;">
+        <h3>📈 Progress History (Overall Band Score)</h3>
+        <canvas id="historyChart" width="300" height="200"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ✅ JavaScript dosyanı en sonda çağır -->
+  <script src="app.js"></script>
+</body>
+</html>

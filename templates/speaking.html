@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Speaking Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #e2e8f0 50%, #cbd5e1 75%, #94a3b8 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #1e293b;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .topic-section {
+            background: #f0f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .topic-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .questions-section {
+            background: #fef3c7;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #f59e0b;
+        }
+
+        .question-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .generate-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+            background: linear-gradient(135deg, #2563eb 0%, #6d28d9 100%);
+        }
+
+        .buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        button {
+            padding: 12px 24px;
+            border: none;
+            background: linear-gradient(135deg, #3b82f6, #7c3aed);
+            color: white;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #2563eb, #6d28d9);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .timer {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .buttons {
+                flex-direction: column;
+            }
+        }
+
+        /* Speech Recognition Styles */
+        .speech-section {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 2px solid #e2e8f0;
+        }
+
+        .speech-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .speech-btn {
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+            color: white;
+            border: none;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        .speech-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        .speech-btn.stop {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+        }
+
+        .speech-btn.stop:hover {
+            box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        .speech-btn.clear {
+            background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);
+            box-shadow: 0 4px 15px rgba(107, 114, 128, 0.3);
+            color: white;
+        }
+
+        .speech-btn.clear:hover {
+            box-shadow: 0 6px 20px rgba(107, 114, 128, 0.4);
+        }
+
+        .speech-btn.analyze {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .speech-btn.analyze:hover {
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .speech-status {
+            background: #fef3c7;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #f59e0b;
+            font-weight: 500;
+        }
+
+        .speech-status.recording {
+            background: #fef2f2;
+            border-left-color: #ef4444;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .transcript-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .transcript-container h4 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .transcript {
+            min-height: 100px;
+            max-height: 200px;
+            overflow-y: auto;
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #374151;
+        }
+
+        .transcript:empty::before {
+            content: "Your speech will appear here...";
+            color: #9ca3af;
+            font-style: italic;
+        }
+
+        /* Analysis Results Styles */
+        .analysis-results {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 2px solid #e2e8f0;
+            display: none;
+        }
+
+        .analysis-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        .analysis-header h3 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .overall-score {
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .band-scores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .band-score-item {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .band-score-item h4 {
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .band-score-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #3b82f6;
+        }
+
+        .analysis-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .analysis-section {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .analysis-section h4 {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .strengths-list, .suggestions-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .strengths-list li {
+            background: #ecfdf5;
+            color: #065f46;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #10b981;
+        }
+
+        .suggestions-list li {
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #f59e0b;
+        }
+
+        @media (max-width: 768px) {
+            .analysis-details {
+                grid-template-columns: 1fr;
+            }
+            
+            .band-scores {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-button">← Back to Hub</a>
+    
+    <div class="container">
+        <div class="header">
+            <h1>IELTS Speaking Practice</h1>
+            <p>Enhance your speaking skills with guided topics and practice questions.</p>
+        </div>
+
+        <div class="card">
+            <div id="content">
+                <div class="loading">Loading speaking topic...</div>
+            </div>
+            
+            <div class="speech-section">
+                <div class="speech-controls">
+                    <button id="startSpeech" onclick="startSpeechRecognition()" class="speech-btn">
+                        🎤 Start Speaking
+                    </button>
+                    <button id="stopSpeech" onclick="stopSpeechRecognition()" class="speech-btn stop" style="display: none;">
+                        ⏹️ Stop Speaking
+                    </button>
+                    <button onclick="clearTranscript()" class="speech-btn clear">
+                        🗑️ Clear
+                    </button>
+                    <button onclick="analyzeSpeaking()" class="speech-btn analyze">
+                        📊 Analyze Speech
+                    </button>
+                </div>
+                
+                <div class="speech-status" id="speechStatus">
+                    Click "Start Speaking" to begin recording...
+                </div>
+                
+                <div class="transcript-container">
+                    <h4>Your Speech Transcript:</h4>
+                    <div id="transcript" class="transcript"></div>
+                </div>
+            </div>
+            
+            <div class="analysis-results" id="analysisResults">
+                <div class="analysis-header">
+                    <h3>📊 Speaking Analysis</h3>
+                    <div class="overall-score" id="overallScore">Score: 0/100</div>
+                </div>
+                
+                <div class="band-scores" id="bandScores">
+                    <!-- Band scores will be populated here -->
+                </div>
+                
+                <div class="analysis-details">
+                    <div class="analysis-section">
+                        <h4>✅ Strengths</h4>
+                        <ul class="strengths-list" id="strengthsList">
+                            <!-- Strengths will be populated here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="analysis-section">
+                        <h4>💡 Suggestions</h4>
+                        <ul class="suggestions-list" id="suggestionsList">
+                            <!-- Suggestions will be populated here -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button onclick="loadNewTopic()">New Topic</button>
+                <button onclick="startTimer()">Start Timer (2 min)</button>
+                <button onclick="stopTimer()">Stop Timer</button>
+            </div>
+            
+            <div class="timer" id="timer" style="display: none;">
+                <span id="time">02:00</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let timerInterval;
+        let timeLeft = 120; // 2 minutes
+        let recognition = null;
+        let isRecording = false;
+
+        // Speech Recognition Setup
+        function initSpeechRecognition() {
+            if ('webkitSpeechRecognition' in window || 'SpeechRecognition' in window) {
+                const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+                recognition = new SpeechRecognition();
+                
+                recognition.continuous = true;
+                recognition.interimResults = true;
+                recognition.lang = 'en-US';
+                
+                recognition.onstart = function() {
+                    isRecording = true;
+                    document.getElementById('startSpeech').style.display = 'none';
+                    document.getElementById('stopSpeech').style.display = 'inline-block';
+                    document.getElementById('speechStatus').textContent = '🎤 Recording... Speak now!';
+                    document.getElementById('speechStatus').classList.add('recording');
+                };
+                
+                recognition.onresult = function(event) {
+                    let finalTranscript = '';
+                    let interimTranscript = '';
+                    
+                    for (let i = event.resultIndex; i < event.results.length; i++) {
+                        const transcript = event.results[i][0].transcript;
+                        if (event.results[i].isFinal) {
+                            finalTranscript += transcript;
+                        } else {
+                            interimTranscript += transcript;
+                        }
+                    }
+                    
+                    const transcriptElement = document.getElementById('transcript');
+                    transcriptElement.innerHTML = finalTranscript + '<span style="color: #6b7280;">' + interimTranscript + '</span>';
+                };
+                
+                recognition.onerror = function(event) {
+                    console.error('Speech recognition error:', event.error);
+                    document.getElementById('speechStatus').textContent = '❌ Error: ' + event.error;
+                    stopSpeechRecognition();
+                };
+                
+                recognition.onend = function() {
+                    isRecording = false;
+                    document.getElementById('startSpeech').style.display = 'inline-block';
+                    document.getElementById('stopSpeech').style.display = 'none';
+                    document.getElementById('speechStatus').textContent = 'Click "Start Speaking" to begin recording...';
+                    document.getElementById('speechStatus').classList.remove('recording');
+                };
+                
+            } else {
+                document.getElementById('speechStatus').textContent = '❌ Speech recognition not supported in this browser';
+                document.getElementById('startSpeech').disabled = true;
+            }
+        }
+
+        function startSpeechRecognition() {
+            if (recognition) {
+                try {
+                    recognition.start();
+                } catch (error) {
+                    console.error('Error starting speech recognition:', error);
+                    document.getElementById('speechStatus').textContent = '❌ Error starting speech recognition';
+                }
+            }
+        }
+
+        function stopSpeechRecognition() {
+            if (recognition && isRecording) {
+                recognition.stop();
+            }
+        }
+
+        function clearTranscript() {
+            document.getElementById('transcript').innerHTML = '';
+            document.getElementById('analysisResults').style.display = 'none';
+        }
+
+        async function analyzeSpeaking() {
+            const transcript = document.getElementById('transcript').textContent.trim();
+            
+            if (!transcript) {
+                alert('Please record some speech first before analyzing.');
+                return;
+            }
+            
+            try {
+                document.getElementById('speechStatus').textContent = '📊 Analyzing your speech...';
+                
+                const response = await fetch('/analyze-speaking', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ transcript: transcript })
+                });
+                
+                const analysis = await response.json();
+                
+                if (analysis.error) {
+                    document.getElementById('speechStatus').textContent = '❌ Error: ' + analysis.error;
+                    return;
+                }
+                
+                displayAnalysis(analysis);
+                document.getElementById('speechStatus').textContent = '✅ Analysis complete!';
+                
+            } catch (error) {
+                console.error('Error analyzing speech:', error);
+                document.getElementById('speechStatus').textContent = '❌ Error analyzing speech';
+            }
+        }
+
+        function displayAnalysis(analysis) {
+            // Overall score
+            document.getElementById('overallScore').textContent = `Score: ${analysis.overall_score}/100`;
+            
+            // Band scores
+            const bandScoresHtml = `
+                <div class="band-score-item">
+                    <h4>Fluency & Coherence</h4>
+                    <div class="band-score-value">${analysis.band_score.fluency_coherence}</div>
+                </div>
+                <div class="band-score-item">
+                    <h4>Lexical Resource</h4>
+                    <div class="band-score-value">${analysis.band_score.lexical_resource}</div>
+                </div>
+                <div class="band-score-item">
+                    <h4>Grammatical Range</h4>
+                    <div class="band-score-value">${analysis.band_score.grammatical_range}</div>
+                </div>
+                <div class="band-score-item">
+                    <h4>Pronunciation</h4>
+                    <div class="band-score-value">${analysis.band_score.pronunciation}</div>
+                </div>
+            `;
+            document.getElementById('bandScores').innerHTML = bandScoresHtml;
+            
+            // Strengths
+            const strengthsHtml = analysis.strengths.length > 0 
+                ? analysis.strengths.map(strength => `<li>${strength}</li>`).join('')
+                : '<li>Keep practicing to improve your speaking skills!</li>';
+            document.getElementById('strengthsList').innerHTML = strengthsHtml;
+            
+            // Suggestions
+            const suggestionsHtml = analysis.suggestions.length > 0 
+                ? analysis.suggestions.map(suggestion => `<li>${suggestion}</li>`).join('')
+                : '<li>Great job! Keep up the good work!</li>';
+            document.getElementById('suggestionsList').innerHTML = suggestionsHtml;
+            
+            // Show analysis results
+            document.getElementById('analysisResults').style.display = 'block';
+        }
+
+        async function loadNewTopic() {
+            try {
+                document.getElementById("content").innerHTML = '<div class="loading">Loading new topic...</div>';
+                
+                const res = await fetch("/generate-speaking");
+                const data = await res.json();
+                
+                const content = `
+                    <div class="topic-section">
+                        <div class="topic-title">🎯 Speaking Topic</div>
+                        <h3>${data.topic}</h3>
+                    </div>
+                    
+                    <div class="questions-section">
+                        <div class="topic-title">❓ Practice Question</div>
+                        <div class="question-item">
+                            <strong>Q:</strong> ${data.questions[0]}
+                        </div>
+                        <button onclick="loadNewTopic()" class="generate-btn">
+                            🚀 Generate New Speaking Question
+                        </button>
+                    </div>
+                `;
+                
+                document.getElementById("content").innerHTML = content;
+                
+            } catch (error) {
+                console.error("Error loading topic:", error);
+                document.getElementById("content").innerHTML = "<p>Error loading topic. Please try again.</p>";
+            }
+        }
+
+        function startTimer() {
+            timeLeft = 120;
+            document.getElementById("timer").style.display = "block";
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById("time").textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up! Great job practicing!");
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            document.getElementById("timer").style.display = "none";
+        }
+
+        window.onload = function() {
+            loadNewTopic();
+            initSpeechRecognition();
+        };
+    </script>
+</body>
+</html> 

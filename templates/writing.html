@@ -1,0 +1,1296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Writing Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(124, 58, 237, 0.15) 0%, transparent 50%),
+                linear-gradient(135deg, #ffffff 0%, #f8fafc 25%, #e2e8f0 50%, #cbd5e1 75%, #94a3b8 100%);
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #1e293b;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 50%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-button {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            color: #1e293b;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .generate-button {
+            background: linear-gradient(135deg, #dc2626, #3b82f6);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .generate-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .generate-subtitle {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+        }
+
+        .task-section {
+            background: #f0fdf4;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .task-type {
+            background: linear-gradient(135deg, #3b82f6, #7c3aed);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .task-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .task-description {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .word-count {
+            background: #fef3c7;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: 600;
+            color: #92400e;
+        }
+
+        .tips-section {
+            background: #f0f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #3b82f6;
+            margin-bottom: 2rem;
+        }
+
+        .tip-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+        }
+
+        .tip-icon {
+            background: #3b82f6;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            font-weight: bold;
+        }
+
+        .criteria-section {
+            background: #f0f9ff;
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 5px solid #3b82f6;
+        }
+
+        .criteria-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+        }
+
+        .criteria-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .criteria-name {
+            font-weight: 600;
+            color: #3b82f6;
+            margin-bottom: 0.5rem;
+        }
+
+        .writing-area {
+            margin: 2rem 0;
+        }
+
+        .writing-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .writing-controls {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .control-button {
+            padding: 8px 12px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .check-writing-btn {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+        }
+
+        .check-writing-btn:hover {
+            background: linear-gradient(135deg, #b91c1c, #dc2626);
+            transform: translateY(-1px);
+        }
+
+        .word-counter {
+            background: #f3f4f6;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 300px;
+            padding: 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            resize: vertical;
+            transition: all 0.3s ease;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .timer {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #3b82f6;
+            margin: 2rem 0;
+        }
+
+        .feedback-section {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border-left: 5px solid #10b981;
+        }
+
+        .feedback-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .overall-score {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .feedback-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+        }
+
+        .error-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .error-item {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .suggestion-item {
+            background: #f0f9ff;
+            color: #1e40af;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .strength-item {
+            background: #ecfdf5;
+            color: #059669;
+            padding: 0.5rem;
+            margin: 0.25rem 0;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .criteria-score {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .score-badge {
+            background: #3b82f6;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #64748b;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1rem;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Enhanced Writing Analysis Styles */
+        .analysis-container {
+            margin-top: 2rem;
+            display: grid;
+            gap: 2rem;
+        }
+
+        .analysis-section {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.95) 100%);
+            border-radius: 25px;
+            padding: 2.5rem;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.08),
+                0 8px 16px rgba(0, 0, 0, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .analysis-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626, #3b82f6, #10b981, #f59e0b);
+            border-radius: 25px 25px 0 0;
+        }
+
+        .analysis-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 2px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .analysis-header h3 {
+            color: #1e293b;
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .overall-score-card {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3);
+            min-width: 120px;
+        }
+
+        .overall-score-value {
+            font-size: 2rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .overall-score-label {
+            font-size: 0.8rem;
+            opacity: 0.9;
+            margin-top: 0.25rem;
+        }
+
+        /* Band Scores Grid */
+        .band-scores-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .band-score-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .band-score-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+        }
+
+        .band-score-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .band-score-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .band-score-title {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1rem;
+        }
+
+        .band-score-value {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .band-score-progress {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .band-score-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #1d4ed8);
+            border-radius: 4px;
+            transition: width 0.8s ease;
+        }
+
+        /* Detailed Analysis */
+        .detailed-analysis-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .analysis-category {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 4px solid #3b82f6;
+        }
+
+        .analysis-category-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .analysis-points {
+            list-style: none;
+            padding: 0;
+        }
+
+        .analysis-point {
+            background: white;
+            padding: 0.75rem 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            border-left: 3px solid #10b981;
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.5;
+        }
+
+        /* Error Analysis */
+        .error-analysis-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .error-summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .error-summary-card {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+
+        .error-summary-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .error-summary-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        .error-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .error-table th {
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            padding: 1.25rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .error-table td {
+            padding: 1.25rem 1rem;
+            border-bottom: 1px solid #f1f5f9;
+            vertical-align: top;
+            font-size: 0.9rem;
+        }
+
+        .error-table tr:hover {
+            background: #f8fafc;
+        }
+
+        .error-type-badge {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .error-text {
+            color: #dc2626;
+            font-weight: 500;
+            background: #fef2f2;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .correction-text {
+            color: #059669;
+            font-weight: 500;
+            background: #f0fdf4;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .severity-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .severity-high {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: white;
+        }
+
+        .severity-medium {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            color: white;
+        }
+
+        .severity-low {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+
+        /* Feedback Cards */
+        .feedback-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feedback-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .feedback-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .feedback-card-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feedback-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feedback-item {
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .strength-item {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            color: #065f46;
+            border-left: 4px solid #10b981;
+        }
+
+        .error-item {
+            background: linear-gradient(135deg, #fef2f2, #fee2e2);
+            color: #991b1b;
+            border-left: 4px solid #ef4444;
+        }
+
+        .suggestion-item {
+            background: linear-gradient(135deg, #f0f9ff, #dbeafe);
+            color: #1e40af;
+            border-left: 4px solid #3b82f6;
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .analysis-section {
+            animation: slideInUp 0.6s ease;
+        }
+
+        .band-score-card {
+            animation: slideInUp 0.6s ease;
+            animation-delay: calc(var(--animation-order) * 0.1s);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .writing-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .writing-controls {
+                width: 100%;
+                justify-content: space-between;
+            }
+
+                    .feedback-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        /* Technical Analysis Styles */
+        .technical-analysis-section {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .technical-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .technical-header h3 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .analysis-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        
+        .analysis-card {
+            background: #f8fafc;
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .analysis-title {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .band-scores-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        
+        .band-score-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .band-score-label {
+            font-weight: 500;
+            color: #374151;
+            font-size: 0.9rem;
+        }
+        
+        .band-score-value {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.1rem;
+        }
+        
+        .detailed-analysis-content {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .analysis-item {
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #3b82f6;
+        }
+        
+        .analysis-item h4 {
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .analysis-item p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+        
+        /* Error Table Styles */
+        .error-table-section {
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .error-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .error-header h3 {
+            color: #1e293b;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .error-summary {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+        
+        .error-table-container {
+            overflow-x: auto;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .error-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+        
+        .error-table th {
+            background: #f8fafc;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: #1e293b;
+            border-bottom: 2px solid #e2e8f0;
+        }
+        
+        .error-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+        
+        .error-type {
+            font-weight: 600;
+            color: #1e293b;
+        }
+        
+        .error-text {
+            color: #dc2626;
+            font-weight: 500;
+        }
+        
+        .correction-text {
+            color: #059669;
+            font-weight: 500;
+        }
+        
+        .severity-high {
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .severity-medium {
+            background: #fffbeb;
+            color: #d97706;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .severity-low {
+            background: #f0fdf4;
+            color: #059669;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .band-scores-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .technical-header,
+            .error-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .analysis-stats,
+            .error-summary {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="/" class="back-button">← Back to Hub</a>
+    
+    <div class="container">
+        <div class="header">
+            <h1>✍️ IELTS Writing Practice</h1>
+            <p>Master both Academic and General Writing tasks with detailed prompts and assessment criteria.</p>
+        </div>
+
+        <div class="card">
+            <button class="generate-button" onclick="loadNewTask()">
+                🚀 Generate New Writing Task
+            </button>
+            <div class="generate-subtitle">Get a fresh challenge to boost your writing skills!</div>
+            
+            <div id="content">
+                <div class="loading"><div class="spinner"></div>Loading writing task...</div>
+            </div>
+            
+            <div class="writing-area">
+                <div class="writing-header">
+                    <h3>✍️ Your Response:</h3>
+                    <div class="writing-controls">
+                        <div class="word-counter" id="word-counter">0 words</div>
+                        <button class="control-button check-writing-btn" onclick="checkWriting()">
+                            ✅ Check Writing
+                        </button>
+                    </div>
+                </div>
+                <textarea id="writing-text" placeholder="Start writing your response here..." oninput="updateWordCount()"></textarea>
+            </div>
+            
+            <!-- Technical Analysis Section -->
+            <div id="technical-analysis" style="display: none;" class="technical-analysis-section">
+                <div class="technical-header">
+                    <h3>🔬 Technical Analysis</h3>
+                    <div class="analysis-stats" id="analysis-stats"></div>
+                </div>
+                
+                <div class="analysis-grid">
+                    <div class="analysis-card">
+                        <div class="analysis-title">📊 Band Scores</div>
+                        <div id="band-scores" class="band-scores-grid"></div>
+                    </div>
+                    
+                    <div class="analysis-card">
+                        <div class="analysis-title">📝 Detailed Analysis</div>
+                        <div id="detailed-analysis" class="detailed-analysis-content"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Error Table Section -->
+            <div id="error-table" style="display: none;" class="error-table-section">
+                <div class="error-header">
+                    <h3>🚨 Error Analysis Table</h3>
+                    <div class="error-summary" id="error-summary"></div>
+                </div>
+                
+                <div class="error-table-container">
+                    <table class="error-table" id="error-table-content">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Error</th>
+                                <th>Correction</th>
+                                <th>Severity</th>
+                            </tr>
+                        </thead>
+                        <tbody id="error-table-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="timer" id="timer" style="display: none;">
+                <span id="time">40:00</span>
+            </div>
+            
+            <div id="feedback" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        let timerInterval;
+        let timeLeft = 2400; // 40 minutes
+
+        async function loadNewTask() {
+            try {
+                document.getElementById("feedback").style.display = 'none';
+                document.getElementById("content").innerHTML = '<div class="loading"><div class="spinner"></div>Loading new task...</div>';
+                document.getElementById("writing-text").value = '';
+                updateWordCount();
+                
+                const res = await fetch("/generate-writing");
+                const data = await res.json();
+                
+                const content = `
+                    <div class="task-section">
+                        <div class="task-type">${data.task.type}</div>
+                        <div class="task-title">${data.task.title}</div>
+                        <div class="task-description">
+                            ${data.task.description}
+                        </div>
+                        <div class="word-count">📝 ${data.task.word_count}</div>
+                    </div>
+                    
+                    <div class="tips-section">
+                        <div class="criteria-title">💡 Writing Tips</div>
+                        ${data.task.tips.map(tip => `
+                            <div class="tip-item">
+                                <div class="tip-icon">✓</div>
+                                <div>${tip}</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                document.getElementById("content").innerHTML = content;
+                
+            } catch (error) {
+                console.error("Error loading task:", error);
+                document.getElementById("content").innerHTML = "<p>Error loading task. Please try again.</p>";
+            }
+        }
+
+        function updateWordCount() {
+            const text = document.getElementById("writing-text").value;
+            const words = text.trim().split(/\s+/).filter(word => word.length > 0);
+            document.getElementById("word-counter").textContent = `${words.length} words`;
+        }
+
+        async function checkWriting() {
+            const text = document.getElementById("writing-text").value;
+            
+            if (!text.trim()) {
+                alert("Please write something before checking!");
+                return;
+            }
+            
+            try {
+                document.getElementById("feedback").innerHTML = '<div class="loading"><div class="spinner"></div>Analyzing your writing...</div>';
+                document.getElementById("feedback").style.display = 'block';
+                
+                const response = await fetch("/check-writing", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ text: text })
+                });
+                
+                const feedback = await response.json();
+                
+                if (feedback.error) {
+                    document.getElementById("feedback").innerHTML = `<p>Error: ${feedback.error}</p>`;
+                    return;
+                }
+                
+                displayFeedback(feedback);
+                
+            } catch (error) {
+                console.error("Error checking writing:", error);
+                document.getElementById("feedback").innerHTML = "<p>Error checking writing. Please try again.</p>";
+            }
+        }
+
+        function displayFeedback(feedback) {
+            // Display regular feedback
+            const feedbackHtml = `
+                <div class="feedback-section">
+                    <div class="feedback-header">
+                        <h3>📊 Writing Analysis</h3>
+                        <div class="overall-score">Score: ${feedback.overall_score}/100</div>
+                    </div>
+                    
+                    <div class="feedback-grid">
+                        <div class="feedback-card">
+                            <div class="feedback-title">✅ Strengths</div>
+                            ${feedback.strengths.length > 0 ? 
+                                `<ul class="error-list">
+                                    ${feedback.strengths.map(strength => `<li class="strength-item">${strength}</li>`).join('')}
+                                </ul>` : 
+                                '<p>Keep working on improving your writing!</p>'
+                            }
+                        </div>
+                        
+                        <div class="feedback-card">
+                            <div class="feedback-title">❌ Grammar Errors</div>
+                            ${feedback.grammar_errors.length > 0 ? 
+                                `<ul class="error-list">
+                                    ${feedback.grammar_errors.map(error => `<li class="error-item">${error}</li>`).join('')}
+                                </ul>` : 
+                                '<p>Great grammar! No errors found.</p>'
+                            }
+                        </div>
+                        
+                        <div class="feedback-card">
+                            <div class="feedback-title">🔤 Spelling Errors</div>
+                            ${feedback.spelling_errors.length > 0 ? 
+                                `<ul class="error-list">
+                                    ${feedback.spelling_errors.map(error => `<li class="error-item">${error}</li>`).join('')}
+                                </ul>` : 
+                                '<p>Excellent spelling! No errors found.</p>'
+                            }
+                        </div>
+                        
+                        <div class="feedback-card">
+                            <div class="feedback-title">💡 Suggestions</div>
+                            ${feedback.suggestions.length > 0 ? 
+                                `<ul class="error-list">
+                                    ${feedback.suggestions.map(suggestion => `<li class="suggestion-item">${suggestion}</li>`).join('')}
+                                </ul>` : 
+                                '<p>Great job! No suggestions at this time.</p>'
+                            }
+                        </div>
+                        
+                        <div class="feedback-card">
+                            <div class="feedback-title">📋 IELTS Criteria Scores</div>
+                            ${Object.entries(feedback.criteria_feedback).map(([criterion, data]) => `
+                                <div class="criteria-score">
+                                    <span>${criterion.replace(/_/g, ' ').toUpperCase()}</span>
+                                    <span class="score-badge">${data.score}/9</span>
+                                </div>
+                                <p style="font-size: 0.9rem; color: #64748b; margin-bottom: 1rem;">${data.comment}</p>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById("feedback").innerHTML = feedbackHtml;
+        }
+
+        function startTimer() {
+            timeLeft = 2400;
+            document.getElementById("timer").style.display = "block";
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById("time").textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up! Please submit your writing.");
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            clearInterval(timerInterval);
+            document.getElementById("timer").style.display = "none";
+        }
+
+        window.onload = loadNewTask;
+    </script>
+</body>
+</html> 

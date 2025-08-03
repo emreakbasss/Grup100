@@ -1,0 +1,178 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e0f7fa, #ffffff);
+  padding: 20px;
+  color: #333;
+}
+
+.main-layout {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+/* Sol Panel */
+.container {
+  flex: 2;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+}
+
+/* Sağ Panel */
+.analysis-panel {
+  flex: 1;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.15);
+}
+
+/* Genel */
+.selected {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1em;
+  border: 2px solid #cce5ff;
+  border-radius: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+textarea:focus {
+  border-color: #66b2ff;
+  outline: none;
+}
+
+button {
+  padding: 10px 24px;
+  font-size: 1em;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+pre,
+.code-box {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #e9f5ff;
+  padding: 15px;
+  border-radius: 6px;
+  overflow-x: auto;
+  border-left: 4px solid #007bff;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+#result {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  color: #212529;
+}
+
+@media screen and (max-width: 900px) {
+  .main-layout {
+    flex-direction: column;
+  }
+
+  .analysis-panel {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}
+
+#timerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fffbea;
+  padding: 4px 16px;
+  border-radius: 10px;
+  border-left: 6px solid #ffe58f;
+  margin-bottom: 20px;
+  height: 36px;
+  font-size: 0.9em;
+}
+
+#timerDisplay {
+  font-size: 1em;
+  font-weight: bold;
+  color: #856404;
+}
+
+#startTimerBtn {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 8px 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#startTimerBtn:hover {
+  background-color: #e0a800
+}
+#task1Btn, #task2Btn {
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* Hatalı kelimeler için stil */
+.error {
+  border-bottom: 2px dotted red;
+  color: #c00;
+  position: relative;
+  cursor: help;
+}
+
+/* Açıklama kutusu */
+.error::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  font-size: 0.85em;
+  bottom: 125%;  /* Alt tarafta 125% kadar mesafe bırak */
+  left: 0;
+  z-index: 9999;  /* Tooltip'in üstte görünmesini sağlamak için z-index değeri artırıldı */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  pointer-events: none;
+  word-wrap: break-word; /* Uzun kelimeleri kır */
+}
+
+/* Hover ile görünürlük */
+.error:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#vocabChart {
+  width: 250px;
+  height: 250px;
+}

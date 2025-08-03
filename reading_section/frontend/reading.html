@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>IELTS Reading Assistant</title>
+</head>
+<body>
+  <div id="user-content">
+    <p>Yükleniyor...</p>
+  </div>
+  <button id="logout">Çıkış Yap</button>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", async () => {
+      const token = localStorage.getItem("access_token");
+      if (!token) {
+        window.location.href = "/static/index.html";
+        return;
+      }
+
+      try {
+        const res = await fetch("http://127.0.0.1:8000/auth/me", {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        if (!res.ok) {
+          throw new Error("Geçersiz token");
+        }
+
+        const data = await res.json();
+        document.getElementById("user-content").innerHTML =
+          `<h2>Hoş geldin, ${data.username}</h2>
+          <p>IELTS Reading Modülü<br>Burada kullanıcıya özel içerik gösterilecek.</p>`;
+      } catch (e) {
+        localStorage.removeItem("access_token");
+        window.location.href = "/static/index.html";
+      }
+    });
+
+    document.getElementById("logout").addEventListener("click", () => {
+      localStorage.removeItem("access_token");
+      window.location.href = "/static/index.html";
+    });
+  </script>
+</body>
+</html>

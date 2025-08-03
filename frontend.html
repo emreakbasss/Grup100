@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IELTS Listening Practice</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; line-height: 1.6; }
+        button { padding: 10px 15px; margin-top: 10px; cursor: pointer; }
+        .question-box { margin-top: 30px; }
+        audio { margin-top: 15px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>🎧 IELTS Listening Practice</h1>
+    <button onclick="loadListening()">Generate New Listening</button>
+    <div id="dialogue"></div>
+    <audio id="audio" controls></audio>
+
+    <div class="question-box">
+        <p id="question"></p>
+        <form id="quiz-form"></form>
+        <p id="feedback"></p>
+    </div>
+
+    <script>
+        async function loadListening() {
+            const res = await fetch("/generate-listening");
+            const data = await res.json();
+
+            const dialogueBox = document.getElementById("dialogue");
+            const question = document.getElementById("question");
+            const form = document.getElementById("quiz-form");
+            const audio = document.getElementById("audio");
+            const feedback = document.getElementById("feedback");
+
+            feedback.innerText = "";
+            dialogueBox.innerHTML = "<h3>Transcript:</h3><p>" + data.dialogue.join("<br>") + "</p>";
+            question.innerText = data.question;
+            audio.src = data.audio_url;
+
+            form.innerHTML = "";
+            data.options.forEach(opt => {
+                const radio = `<label><input type='radio' name='choice' value='${opt[0]}' /> ${opt}</label><br>`;
+                form.innerHTML += radio;
+            });
+            form.innerHTML += `<button type='submit'>Check Answer</button>`;
+
+            form.onsubmit = function(e) {
+                e.preventDefault();
+                const selected = form.querySelector("input[name='choice']:checked");
+                if (!selected) return (feedback.innerText = "Please select an option.");
+                feedback.innerText = selected.value === data.answer ? "✅ Correct!" : `❌ Incorrect. Correct answer is ${data.answer}`;
+            };
+        }
+    </script>
+</body>
+</html>
