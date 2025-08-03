@@ -245,6 +245,16 @@ Gerçek kullanıcı deneyimi simülasyonu sağlandı
 
 *Açıklama:* Aleyna Yılmaz hiçbir toplantıya katılmadı ve katkı sunmadı.
 
+
+## 🛠️ Yapılan Çalışmalar
+
+- **Web Arayüzü + Listening:** Emre Akbaş  
+- **Writing:** Hüseyin Casun  
+- **Reading:** Deniz Su Şen  
+- **Speaking:** Feyzi Eşkar  
+
+---
+
 ## 🔁 Sprint Retrospective
 
 **İyi Gidenler:**
