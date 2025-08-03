@@ -235,6 +235,9 @@ Bu sprintte, IELTS Listening, Reading, Speaking ve Writing bölümleri için etk
 <img width="863" height="856" alt="ana sayfa" src="https://github.com/user-attachments/assets/363c5b63-b726-4e4e-a968-c679dd8d33cc" />
 
 ---
+## Sprint Board
+<img width="1630" height="802" alt="jira" src="https://github.com/user-attachments/assets/fc270a7d-fafa-4898-a385-a1bf5bcb1992" />
+
 
 ## 🔧 Kullanılan Teknolojiler  
 - **Backend (planlanıyor):** FastAPI ile yapay zeka içerik üretimi (Gemini API) 
