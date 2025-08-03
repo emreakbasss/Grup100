@@ -180,9 +180,7 @@ Aşağıda, uygulamanın Sprint 2 sonunda ulaştığı temel modüllere ait kull
 - Speaking modülü için ses tanıma entegrasyonu başlatılacak.
 - Yazılı içerikler için kullanıcı testine başlanacak.
 
-## 🚀 Sprint 3 Bilgileri
-
-# 📦 Sprint 3 – IELTS Pratik Platformu Geliştirme
+# 🚀 Sprint 3 – IELTS Pratik Platformu Geliştirme
 
 Bu sprintte, IELTS Listening, Reading, Speaking ve Writing bölümleri için etkileşimli ve yapay zeka destekli pratik modülleri geliştirildi. Her modül, dinamik içerik üretimi ve gerçek zamanlı geri bildirimle gerçek sınav deneyimini simüle etmeyi hedeflemektedir.
 
@@ -191,66 +189,74 @@ Bu sprintte, IELTS Listening, Reading, Speaking ve Writing bölümleri için etk
 ## ✅ Tamamlanan Özellikler
 
 ### 🎧 Listening (Dinleme) Modülü
-- Yapay zeka tarafından oluşturulan IELTS tarzı diyaloglar.
-- Ses çalar ve ilerleme takibi.
-- Diyalog başına çoktan seçmeli tek soru.
-- Cevap kontrol sistemi.
-- Diyalog göster/gizle seçeneği.
-- Yeni dinleme içeriği oluşturma butonu.
-  
-  <img width="492" height="732" alt="Listenning" src="https://github.com/user-attachments/assets/522a1d72-957a-4067-8882-a5a8d7b4607c" />
+- Yapay zeka tarafından oluşturulan IELTS tarzı diyaloglar
+- Ses çalar ve ilerleme takibi
+- Diyalog başına çoktan seçmeli tek soru
+- Cevap kontrol sistemi
+- Diyalog göster/gizle seçeneği
+- Yeni dinleme içeriği oluşturma butonu
 
+<img width="492" height="732" alt="Listenning" src="https://github.com/user-attachments/assets/522a1d72-957a-4067-8882-a5a8d7b4607c" />
 
 ### 📖 Reading (Okuma) Modülü
-- Gerçek IELTS formatına uygun akademik paragraf (20 dakika zamanlayıcı).
-- Birden fazla anlama sorusu.
-- Tüm cevapları tek seferde kontrol etme.
-- Dinamik olarak yeni paragraf üretimi.
-  
+- Gerçek IELTS formatına uygun akademik paragraf (20 dakika zamanlayıcı)
+- Birden fazla anlama sorusu
+- Tüm cevapları tek seferde kontrol etme
+- Dinamik olarak yeni paragraf üretimi
+
 <img width="375" height="861" alt="reading" src="https://github.com/user-attachments/assets/e4a9c7f2-6000-4e4d-9547-e9f56da889cf" />
 
 ### 🗣️ Speaking (Konuşma) Modülü
-- Konuşma konusu ve bir pratik sorusu.
-- Kayıt başlat/durdur butonları ve zamanlayıcı (2 dakika).
-- Gerçek zamanlı konuşma metnine çeviri (speech-to-text).
-- "Konuşmayı Analiz Et" butonu (entegrasyon hazır).
-- Yeni konuşma sorusu üretme.
-  
+- Konuşma konusu ve bir pratik sorusu
+- Kayıt başlat/durdur butonları ve zamanlayıcı 
+- Gerçek zamanlı konuşma metnine çeviri (speech-to-text)
+- "Konuşmayı Analiz Et" butonu 
+- Yeni konuşma sorusu üretme
+
 <img width="483" height="777" alt="speaking" src="https://github.com/user-attachments/assets/5a212c49-335a-429c-a869-1e3674374a45" />
 
 ### ✍️ Writing (Yazma) Modülü
-- IELTS essay konuları üretme.
-- Essay giriş alanı ve canlı kelime sayacı.
-- “Yazıyı Değerlendir” butonuyla gemini destekli analiz.
-- Geri bildirim kutusu: dil bilgisi, içerik, yapısal öneriler.
-- Yeni konu oluşturma butonu.
+- IELTS essay konuları üretme
+- Essay giriş alanı ve canlı kelime sayacı
+- “Yazıyı Değerlendir” butonuyla gemini destekli analiz
+- Geri bildirim kutusu: dil bilgisi, içerik, yapısal öneriler
+- Yeni konu oluşturma butonu
   
 <img width="600" height="862" alt="wirting" src="https://github.com/user-attachments/assets/4171a038-f9e6-4098-a770-fd36ebc4be16" />
 
 ### 🧭 Ana Sayfa (IELTS Uygulama Merkezi)
-- Listening, Reading, Speaking ve Writing modüllerini içeren merkezi navigasyon.
-- Her modül için açıklayıcı kart yapısı ve özellik listesi.
-- Temiz, sezgisel ve mobil uyumlu arayüz.
-  
+- Listening, Reading, Speaking ve Writing modüllerini içeren merkezi navigasyon
+- Her modül için açıklayıcı kart yapısı ve özellik listesi
+- Temiz, sezgisel ve mobil uyumlu arayüz
+
 <img width="863" height="856" alt="ana sayfa" src="https://github.com/user-attachments/assets/363c5b63-b726-4e4e-a968-c679dd8d33cc" />
 
----
-## Sprint Board
+## 📸 Sprint Board
 <img width="1630" height="802" alt="jira" src="https://github.com/user-attachments/assets/fc270a7d-fafa-4898-a385-a1bf5bcb1992" />
 
+## 🧪 Sprint Review
+Tüm modüller işlevsel hale getirildi
 
-## 🔧 Kullanılan Teknolojiler  
-- **Backend (planlanıyor):** FastAPI ile yapay zeka içerik üretimi (Gemini API) 
+Geri bildirim sistemleri test edildi
 
-## Yapılan Çalışmalar
--Web Arayüzü + Listening = Emre Akbaş
+Gerçek kullanıcı deneyimi simülasyonu sağlandı
 
--Writing = Hüseyin Cansu
+**Katılımcılar:**  Emre Akbaş, Feyzi Eşkar, Deniz Su Şen, Hüseyin Casun
 
--Reading = Deniz Su Şen
+*Açıklama:* Aleyna Yılmaz hiçbir toplantıya katılmadı ve katkı sunmadı.
 
--Speaking = Feyzi Eşkar
+## 🔁 Sprint Retrospective
 
-## Notlar
-Takım üyemiz olan Aleyna Yılmaz hiçbir toplantıya ve çalışmamaya katılmamıştır.
+**İyi Gidenler:**
+- Modül bazlı görev dağılımı başarıyla uygulandı
+- Takım koordinasyonu yüksekti
+- Kullanıcı arayüzleri ve AI entegrasyonu sorunsuz ilerledi
 
+**Geliştirilmesi Gerekenler:**
+- Task başına zaman tahminleri geliştirilmeli
+- Kullanıcı testlerinden daha fazla geri bildirim alınmalı
+
+**Aksiyonlar:**
+- Kullanıcı test senaryoları hazırlanacak
+- Raporlama ve istatistik panelleri geliştirilecek
+- Eğitim içerik çeşitliliği artırılacak
